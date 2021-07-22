@@ -31,6 +31,7 @@
 	27. Upcoming Campiagn
 	28. Tailer Home Two Owl Active
 	29. Gallery Campaign Active
+    30. Contact Us
 	
 ================================================*/
 
@@ -720,3 +721,93 @@
 	});
  
 })(jQuery);
+
+/* ==============================================
+ CONTACT START-->
+ =============================================== */
+var $form = $("#contactform");
+var $successMsg = $(".alert");
+// $.validator.addMethod("letters", function (value, element) {
+//     return this.optional(element) || value == value.match(/^[a-zA-Z\s]*$/);
+// });
+
+// $.validator.addMethod("phoneUS", function (phone_number, element) {
+//     // phone_number = phone_number.replace(/\s+/g, "");
+//     return this.optional(element) || phone_number.length > 9 &&
+//         phone_number.match(/^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[789]\d{9}|(\d[ -]?){10}\d$/);
+// }, "Please specify a valid phone number");
+
+// $form.validate({
+//     rules: {
+//         first_name: {
+//             required: true,
+//             minlength: 3,
+//             letters: true
+//         },
+//         last_name: {
+//             required: true,
+//             minlength: 3,
+//             letters: true
+//         },
+//         phone: {
+//             required: true,
+//             phoneUS: true
+//         },
+//         email: {
+//             required: true,
+//             email: true
+//         }
+//     },
+//     messages: {
+//         first_name: "Please specify your name (only letters and spaces are allowed)",
+//         last_name: "Please specify your name (only letters and spaces are allowed)",
+//         phone: "Please enter valid phone number",
+//         email: "Please specify a valid email address"
+//     },
+//     submitHandler: function () {
+//         $successMsg.show();
+//     }
+// });
+
+jQuery(document).ready(function () {
+    jQuery("#contact").trigger("reset");
+    $('#contact').submit(function (e) {
+        e.preventDefault();
+        if (true) { // $form.valid()
+            var action = $(this).attr('action');
+            // $(".contact-form").slideUp(750, function () {
+            $('#contact').hide();
+            // $('#form-submit')
+            //     .after('<img src="images/ajax-loader.gif" class="loader" />')
+            //     .attr('disabled', 'disabled');
+            $.post(action, {
+                name: $('#name').val(),
+                email: $('#email').val(),
+                phone: $('#phone').val(),
+                message: $('#message').val(),
+            },
+                function (data) {
+                    jQuery('#success-message')[0].innerHTML = data;
+                    jQuery("#contact").trigger("reset");
+                    setTimeout(function () {
+                        $('#contact').show();
+                        $('#submit').removeAttr('disabled');
+                        $('#success-message')[0].innerHTML = '';
+                    }, 5000);
+                    // $('.contact-form').slideDown('slow');
+                    // $('.contact-form img.loader').fadeOut('slow', function () {
+                    //     $(this).remove()
+                    // });
+                    // if (data.match('success') != null) $('.contact-form').slideUp('slow');
+                }
+            );
+            // });
+        } else {
+            return false;
+        }
+    });
+});
+
+/* ==============================================
+ CONTACT END-->
+ =============================================== */
