@@ -1378,8 +1378,17 @@ ul.gallery-menu li.active,ul.gallery-menu li:hover{color:#e2a750;}
   padding-left: 140px;
 }
 .contact-adres-single h4 {
+/*
   color: #fff;
   position: relative;
+*/
+/*    mine edit start*/
+    position: relative;
+    font-size: 15px;
+    color: #000;
+    font-weight: 800;
+    font-family: 'Roboto';
+/*    mine edit end*/
 }
 .contact-adres-single h4::after {
   border-bottom: 1px dashed #fff;
@@ -3050,3 +3059,6 @@ ul.pstr_rating {
     padding-top: 10px;
 }
 
+.text-justify{
+    text-align: justify;
+}

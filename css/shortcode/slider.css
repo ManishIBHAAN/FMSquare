@@ -40,7 +40,18 @@
   margin: 0 0 40px;
   animation-delay: 1.2s;
 }
-.slide-content h2  span,.slide-content h1  span{color:#e2a750;}
+.slide-content h2  span,.slide-content h1  span{
+/*    color:#e2a750;*/
+    color:#ed9425;
+    background-color: rgba(0, 0, 0, 0.27);
+}
+
+.slide-content h2  span{
+    font-size: 28px;
+}
+
+
+
 .slide-btn a {
   animation-delay: 1.6s;
   background: #e2a750 none repeat scroll 0 0;
@@ -82,12 +93,28 @@
 .slider-area.actor .slide-content h2 {
   animation-delay: 0.8s;
   color: #fff;
-  font-size: 48px;
+  font-size: 18px;
   font-weight: 700;
-  margin: 0 0 13px;
+  margin: -180px 0 13px;
   text-shadow: 1px 1px 3px #fff;
   text-transform: none;
+    line-height: 40px;
 }
+
+.slider-area.actor .slide-content h2 .frank-capra{
+    text-align: right !important;
+    color:#fff;
+    font-size: 18px;
+}
+
+/*
+.slide-content h2{
+    margin-top: -50px;
+    font-size: 20px;
+}
+*/
+
+
 .slider-area.actor .slide-content p {
   color: #fff;
   display: block;
@@ -154,6 +181,7 @@
   height: 100vh !important;
   padding-bottom: 100% !important;
 }
+
 /* Slider Animation Css */
 .slide-content *{
   -webkit-animation-duration: 1s;

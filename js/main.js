@@ -333,7 +333,7 @@
 		]
 	});
 	
-	/*------ 13. Mailchimp Active ------*/
+	/*------ 13. Mailchimp Active ------
 	$('#mc-form').ajaxChimp({
 		language: 'en',
 		callback: mailChimpResponse,

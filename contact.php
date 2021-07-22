@@ -15,8 +15,8 @@ $email    = $_POST['email'];
 //$phone   = $_POST['phone'];
 // $select_price   = $_POST['select_price'];
 //$select_service   = $_POST['select_service'];
-$phone  = $_POST['phone'];
-$comments = $_POST['message'];
+//$phone  = $_POST['phone'];
+//$comments = $_POST['message'];
 $verify   = $_POST['verify'];
 
 // if(trim($first_name) == '') {
